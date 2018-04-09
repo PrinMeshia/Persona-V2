@@ -1,0 +1,24 @@
+<Files .htaccess>
+	order allow,deny
+	deny from all
+</Files>
+Options -Indexes
+<Files ~ "^(index)\.(p?s?x?htm?|txt|aspx?|cfml?|cgi|pl|php[3-9]|jsp|xml)$">
+	order allow,deny
+	deny from all
+</Files>
+<Files ~ "\.(inc|class|sql|ini|conf|exe|dll|bin|tpl|bkp|dat|c|h|py|spd|theme|module|json)$">
+	deny from all
+</Files>
+    Options +FollowSymLinks
+	RewriteEngine On
+	RewriteEngine On
+	RewriteCond %{HTTPS} off
+	RewriteCond %{HTTP_HOST} !=localhost
+	RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+
+	RewriteRule ^/?$ approot/ [L]
+	RewriteCond %{REQUEST_URI} !\.(css|gif|ico|jpg|js|png|swf|txt|svg)$
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.+)$ approot/index.php?action=$1 [L,QSA]
