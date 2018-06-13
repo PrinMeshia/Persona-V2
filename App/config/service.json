@@ -1,0 +1,16 @@
+{
+    "parameters" : {
+        "view.path" : "/public/views"
+    },
+    "services" : [
+        {
+            "name" : "Renderer",
+            "class" : "App\\Lib\\renderer\\Renderer::class",
+            "parameter" : "view.path"
+        },
+        {
+            "name" : "Router",
+            "class" : "App\\Lib\\Router\\Router::class"
+        }
+    ]
+}
