@@ -1,0 +1,26 @@
+{
+    "name" : "Persona Framawork",
+    "description": "",
+    "authors": [
+       {
+           "name": "Prin'Meshia",
+           "homepage": "https://persona.yj.fr"
+       }
+    ],
+    "autoload" : {
+        "psr-4" : {
+            "Framework\\" : "persona/Framework",
+            "Modules\\" : "src/Modules",
+            "Models\\" : "src/Models"
+        }
+    },
+    "require": {
+        "php-di/php-di": "^6.0",
+        "twig/twig": "2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.2",
+        "robmorgan/phinx": "^0.10.3",
+        "fzaninotto/faker": "^1.7"
+    }
+}
